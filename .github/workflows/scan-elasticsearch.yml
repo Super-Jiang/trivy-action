@@ -15,5 +15,4 @@ jobs:
             image \
             --severity CRITICAL,HIGH \
             --ignore-unfixed \
-            --format json \
             arm64v8/elasticsearch:8.19.17
