@@ -15,4 +15,4 @@ jobs:
             image \
             --severity CRITICAL,HIGH \
             --ignore-unfixed \
-            elastic/elasticsearch:9.3.6
+            elastic/elasticsearch:8.19.17
