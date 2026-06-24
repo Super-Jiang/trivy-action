@@ -15,4 +15,4 @@ jobs:
             image \
             --severity CRITICAL,HIGH \
             --ignore-unfixed \
-            kuzzleio/elasticsearch:latest
+            wardenenv/elasticsearch:9.3
