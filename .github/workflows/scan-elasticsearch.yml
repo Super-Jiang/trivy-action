@@ -7,14 +7,12 @@ jobs:
   scan-image:
     runs-on: ubuntu-latest
     steps:
-      - name: Install Trivy
+      - name: Scan Elasticsearch 9.3.6 image with Trivy (Docker)
         run: |
-          curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sudo sh -s -- -b /usr/local/bin v0.69.1
-          trivy --version
-
-      - name: Scan Elasticsearch 9.3.6 image with Trivy
-        run: |
-          trivy image \
+          docker run --rm \
+            -v /var/run/docker.sock:/var/run/docker.sock \
+            aquasec/trivy:0.69.1 \
+            image \
             --severity CRITICAL,HIGH \
             --ignore-unfixed \
             --exit-code 1 \
