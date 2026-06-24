@@ -7,7 +7,7 @@ jobs:
   scan-image:
     runs-on: ubuntu-latest
     steps:
-      - name: Scan ubuntu/nginx:1.28-26.04_edge image with Trivy (Docker)
+      - name: Scan ubuntu/nginx:1.28-26.04_edge (ARM64) with Trivy
         run: |
           docker run --rm \
             -v /var/run/docker.sock:/var/run/docker.sock \
@@ -15,4 +15,5 @@ jobs:
             image \
             --severity CRITICAL,HIGH \
             --ignore-unfixed \
+            --platform linux/arm64 \
             ubuntu/nginx:1.28-26.04_edge
