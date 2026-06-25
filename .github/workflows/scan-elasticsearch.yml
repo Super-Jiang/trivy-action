@@ -16,4 +16,4 @@ jobs:
             --severity CRITICAL,HIGH \
             --ignore-unfixed \
             --platform linux/arm64 \
-            ubuntu/nginx:1.28-26.04_edge
+            arm64v8/elasticsearch:9.4.2
